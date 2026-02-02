@@ -11,15 +11,20 @@
   "dependencies": {
     "@photonjs/express": "^0.1.13",
     "@universal-middleware/core": "^0.4.16",
+    "argon2": "^0.44.0",
+    "axios": "^1.13.4",
+    "axios-cache-interceptor": "^1.11.4",
     "better-sqlite3": "^12.6.2",
     "dotenv": "^17.2.3",
     "express": "^5.2.1",
+    "pokenode-ts": "^1.20.0",
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
     "telefunc": "^0.2.17",
     "vike": "^0.4.252",
     "vike-photon": "^0.1.24",
-    "vike-react": "^0.6.19"
+    "vike-react": "^0.6.19",
+    "zod": "^4.3.6"
   },
   "devDependencies": {
     "@biomejs/biome": "2.3.12",
