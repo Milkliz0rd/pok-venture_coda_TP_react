@@ -5,10 +5,14 @@ import { Nav } from "@/components/Nav";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
-    <div className={"flex max-w-5xl m-auto"}>
-      <Nav />
-      <Content>{children}</Content>
-    </div>
+    <>
+      <div>
+        <Nav />
+      </div>
+      <div className={"flex max-w-5xl m-auto"}>
+        <Content>{children}</Content>
+      </div>
+    </>
   );
 }
 
