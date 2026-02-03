@@ -30,7 +30,7 @@ function Sidebar({ children }: { children: React.ReactNode }) {
 function Content({ children }: { children: React.ReactNode }) {
   return (
     <div id="page-container">
-      <div id="page-content" className={"p-5 pb-12 min-h-screen"}>
+      <div id="page-content" className={"p-5 pb-12 min-h-screen w-100% flex flex-col align-items-center"}>
         {children}
       </div>
     </div>
