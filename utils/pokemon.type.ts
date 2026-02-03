@@ -1,4 +1,13 @@
-export interface Pokemon {
+// types/pokemon.ts
+export type NamedAPIResource = {
   name: string;
-  id: number;
-}
+  url: string;
+};
+
+export type PokemonSpeciesDetails = {
+  name: string;
+  names: Array<{
+    name: string;
+    language: { name: string };
+  }>;
+};
