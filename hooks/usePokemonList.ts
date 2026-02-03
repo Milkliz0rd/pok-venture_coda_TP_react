@@ -1,7 +1,6 @@
-// hooks/usePokemonList.ts
 import { useMemo, useState } from "react";
 import { useDebounce } from "@/hooks/useDebounce";
-import type { PokemonSpeciesDetails } from "@/utils/pokemon.type";
+import type { PokemonSpeciesDetails } from "@/type/pokemon";
 
 export function usePokemonList(pokemons: PokemonSpeciesDetails[]) {
   const [search, setSearch] = useState("");

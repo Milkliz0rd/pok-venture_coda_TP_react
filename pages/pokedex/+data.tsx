@@ -1,8 +1,5 @@
 // pages/pokedex/+data.ts
-import type {
-  NamedAPIResource,
-  PokemonSpeciesDetails,
-} from "@/utils/pokemon.type";
+import type { NamedAPIResource, PokemonSpeciesDetails } from "@/type/pokemon";
 
 export type Data = Awaited<ReturnType<typeof data>>;
 

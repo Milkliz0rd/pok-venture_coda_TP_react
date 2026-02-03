@@ -10,7 +10,6 @@ export default function PokemonsPage() {
   return (
     <main>
       <h1>Pokédex</h1>
-
       <input
         value={search}
         onChange={(e) => setSearch(e.target.value)}
