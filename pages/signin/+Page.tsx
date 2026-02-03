@@ -9,7 +9,7 @@ export default function login(){
         <input type="text" id="username" className=" border-2 m-1" />
         <label htmlFor="password">Mot de passe :</label>
         <input type="text" id="username" className=" border-2 m-1" />
-        <button type="submit" className="border-1 mt-2">Envoyer</button>
+        <button type="submit" className="border-2 mt-2">Envoyer</button>
       </div>
       <div className="mt-4">
         <h3>Pas encore inscrit ?</h3>
