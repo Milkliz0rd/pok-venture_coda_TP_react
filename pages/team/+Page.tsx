@@ -3,7 +3,7 @@ import { VirtualizedPokemonCard, Card } from "@/components/PokemonCard";
 import { generatePokemons } from "@/utils/mockPokemon";
 
 export default function Team() {
-    const pokemons = generatePokemons(15);
+    const pokemons = generatePokemons(1000);
 
     return (
         <main>
