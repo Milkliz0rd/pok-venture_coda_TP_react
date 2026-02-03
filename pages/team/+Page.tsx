@@ -1,24 +1,20 @@
 import { List } from "react-window";
-import { VirtualizedPokemonCard } from "@/components/PokemonCard";
+import { VirtualizedPokemonCard, Card } from "@/components/PokemonCard";
 import { generatePokemons } from "@/utils/mockPokemon";
 
 export default function Team() {
-    const pokemons = generatePokemons(50);
-
-    console.log(pokemons);
+    const pokemons = generatePokemons(15);
 
     return (
         <main>
             <h1>Team</h1>
+            <List
+                rowComponent={VirtualizedPokemonCard}
+                rowCount={pokemons.length}
+                rowHeight={400}
+                rowProps={{ pokemons }}
+            />
 
-            <div className="bg-blue-200 h-52">
-                <List
-                    rowComponent={VirtualizedPokemonCard}
-                    rowCount={pokemons.length}
-                    rowHeight={24}
-                    rowProps={{ pokemons }}
-                />
-            </div>
         </main>
     );
 }

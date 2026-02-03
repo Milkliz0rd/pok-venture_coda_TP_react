@@ -1,21 +1,16 @@
 import { Pokemon, PokemonClient } from "pokenode-ts";
+import { useState } from "react";
 
-export const generatePokemons = (count: number): Pokemon[] => {
-    const equipeIds = Array.from({ length: count }, (_, i) => {
-        const optionsCount = Math.floor(Math.random() * 5) + 1;
-
-        return i + 1;
-    });
-
-    const pokemons: Pokemon[] = []
-    equipeIds.forEach((id) => {
+export const generatePokemons = (count: number): (Pokemon| null)[]  => {
+    return Array.from({ length: count }, (_, i) => {
+        const [pokemon, setPokemon] = useState<Pokemon | null>(null);
         (async () => {
             const api = new PokemonClient();
             await api
-                .getPokemonById(id)
-                .then((data) => pokemons.push(data))
+                .getPokemonById(i + 1)
+                .then((data) => setPokemon(data))
                 .catch((error) => console.error(error));
         })();
+        return pokemon;
     });
-    return pokemons;
 };
