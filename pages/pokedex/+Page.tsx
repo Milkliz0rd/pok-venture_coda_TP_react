@@ -1,4 +1,4 @@
-export default function Pokédex() {
+export default function Pokedex() {
     return (
         <main>
             <h1>Pokédex</h1>
