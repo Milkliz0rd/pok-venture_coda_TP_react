@@ -1,4 +1,4 @@
-import { Pokemon } from "@/types/pokemon";
+import { Pokemon } from "@/type/pokemon";
 
 export interface User {
     id: number;
