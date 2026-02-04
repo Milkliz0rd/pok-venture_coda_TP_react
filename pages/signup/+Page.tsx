@@ -1,6 +1,6 @@
-export default function signUP(){
-  return(
-    <div >
+export default function signUP() {
+  return (
+    <div>
       <div className="flex flex-col">
         <h1>Inscription</h1>
         <label htmlFor="username">Veuillez choisi un Identifiant :</label>
@@ -9,8 +9,10 @@ export default function signUP(){
         <input type="text" id="username" className=" border-2 m-1" />
         <label htmlFor="password">Veuillez confirmer le mot de passe :</label>
         <input type="text" id="username" className=" border-2 m-1" />
-        <button type="submit" className="border-1 mt-2">Envoyer</button>
+        <button type="submit" className="border-1 mt-2">
+          Envoyer
+        </button>
       </div>
     </div>
-  )
+  );
 }
