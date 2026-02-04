@@ -1,8 +1,12 @@
 import { useMemo, useState } from "react";
 import { useDebounce } from "@/hooks/useDebounce";
-import type { PokemonSpeciesDetails } from "@/type/pokemon";
 
-export function usePokemonList(pokemons: PokemonSpeciesDetails[]) {
+type PokemonBase = {
+  name: string;
+  names: Array<{ name: string; language: { name: string } }>;
+};
+
+export function usePokemonList<T extends PokemonBase>(pokemons: T[]) {
   const [search, setSearch] = useState("");
   const debounced = useDebounce(search, 300);
 

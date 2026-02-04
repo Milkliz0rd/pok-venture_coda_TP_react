@@ -1,7 +1,15 @@
-// pages/pokedex/+data.ts
 import type { NamedAPIResource, PokemonSpeciesDetails } from "@/type/pokemon";
 
+export type PokemonWithSprite = PokemonSpeciesDetails & {
+  sprite: string | null;
+};
+
 export type Data = Awaited<ReturnType<typeof data>>;
+
+function getIdFromUrl(url: string) {
+  const parts = url.split("/").filter(Boolean);
+  return parts[parts.length - 1]; // ex: "252"
+}
 
 export async function data() {
   const res = await fetch("https://pokeapi.co/api/v2/generation/3");
@@ -10,11 +18,23 @@ export async function data() {
 
   const speciesList: NamedAPIResource[] = gen.pokemon_species;
 
-  const pokemons: PokemonSpeciesDetails[] = await Promise.all(
+  const pokemons: PokemonWithSprite[] = await Promise.all(
     speciesList.map(async (pkmn) => {
-      const r = await fetch(pkmn.url);
-      if (!r.ok) throw new Error(`Failed species: ${pkmn.name}`);
-      return (await r.json()) as PokemonSpeciesDetails;
+      // 1) species details (names FR etc.)
+      const speciesRes = await fetch(pkmn.url);
+      if (!speciesRes.ok) throw new Error(`Failed species: ${pkmn.name}`);
+      const species = (await speciesRes.json()) as PokemonSpeciesDetails;
+
+      // 2) pokemon details (sprites)
+      const id = getIdFromUrl(pkmn.url);
+      const pokemonRes = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`);
+      if (!pokemonRes.ok) throw new Error(`Failed pokemon: ${pkmn.name}`);
+      const pokemonData = await pokemonRes.json();
+
+      return {
+        ...species,
+        sprite: pokemonData?.sprites?.front_default ?? null, // ✅ sprite (singulier)
+      };
     }),
   );
 
