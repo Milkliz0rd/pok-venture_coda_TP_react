@@ -17,8 +17,6 @@ export default function Pokedex() {
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-
-      {/* IMPORTANT : hauteur sur le parent */}
       <div className="relative h-[400px] w-full border-2">
         <List
           rowComponent={VirtualizedPokemonCard}
