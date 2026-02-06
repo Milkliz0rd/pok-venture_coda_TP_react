@@ -9,19 +9,27 @@ export default function Pokedex() {
   const { filteredList, search, setSearch } = usePokemonList(pokemons);
 
   return (
-    <main>
-      <h1>Pokédex</h1>
+    <main className="flex flex-col w-screen h-screen items-center justify-center bg-[url(@/assets/pokedexMini.webp)]">
+      <div>
+        <img
+          className="w-90 h-30 m-5"
+          src="../assets/pokedexTitle.webp"
+          alt="PokeVenture"
+        ></img>
+      </div>
 
       <input
-        className="border p-2 mb-4 w-full bg-gray-200"
+        className="border-4 p-2 mb-4 bg-blue-100"
         value={search}
         onChange={(e) => setSearch(e.target.value)}
       />
-      <div className="relative h-[400px] w-full border-2">
+
+      {/* IMPORTANT : hauteur sur le parent */}
+      <div className="relative h-[400px] w-3xl border-3 bg-blue-100 rounded-2xl">
         <List
           rowComponent={VirtualizedPokemonCard}
           rowCount={filteredList.length}
-          rowHeight={60}
+          rowHeight={120}
           rowProps={{ pokemons: filteredList }}
         />
       </div>

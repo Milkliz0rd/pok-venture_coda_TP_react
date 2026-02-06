@@ -1,6 +1,6 @@
 export function Nav() {
   return (
-    <nav className="flex justify-between p-5 bg-amber-100">
+    <nav className="flex justify-between p-5 bg-amber-100 max-w-screen">
       <div className="flex gap-5">
         <a href="/">Accueil</a>
         <a href="/pokedex">Pokedex</a> 

@@ -6,7 +6,7 @@ import { Nav } from "@/components/Nav";
 export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
-      <div className={"z-20 absolute w-full"}>
+      <div className={"max-w-screen"}>
         <Nav />
       </div>
       <div className={"flex max-w-5xl"}>
