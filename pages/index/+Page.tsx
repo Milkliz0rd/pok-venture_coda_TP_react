@@ -2,7 +2,7 @@ import backgoundPkmn from "@/assets/backgroundEmrld.png";
 
 export default function Page() {
   return (
-    <div className="bg-[url(@/assets/backgroundEmrld.webp)] min-h-screen w-screen flex flex-col items-center gap-20 justify-center">
+    <div className="bg-[url(@/assets/backgroundEmrld.webp)] min-h-screen min-w-dvw flex flex-col items-center gap-20 justify-center">
       <div>
         <img
           className="w-180 h-60 "

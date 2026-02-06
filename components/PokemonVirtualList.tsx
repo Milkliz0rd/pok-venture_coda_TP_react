@@ -17,14 +17,14 @@ export function PokemonCard(
       {...ariaAttributes}
       {...rest}
       style={style}
-      className={`px-2 flex items-center gap-10 justify-center border-t ${rest.className ?? ""}`}
+      className={`px-2 flex items-center gap-10 justify-center border-t border-2 ${rest.className ?? ""}`}
     >
       {pokemon.sprite ? (
         <img
           src={pokemon.sprite}
           alt={pokemon.name}
-          width={60}
-          height={60}
+          width={180}
+          height={180}
           loading="lazy"
         />
       ) : (
