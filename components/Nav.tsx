@@ -3,6 +3,7 @@ export function Nav() {
     <nav className="flex justify-between p-5 bg-amber-100 max-w-screen">
       <div className="flex gap-5">
         <a href="/">Accueil</a>
+        <a href="/exploration">Exploration</a>
         <a href="/pokedex">Pokedex</a> 
         <a href="/team">Equipe</a> 
         <a href="/combat">Combat</a> 
