@@ -1,21 +1,11 @@
-// pages/pokedex/+data.ts
-import type { NamedAPIResource, PokemonSpeciesDetails } from "@/type/pokemon";
-
+import { pokemonService } from "@/service/pokemon.service";
 export type Data = Awaited<ReturnType<typeof data>>;
+export type { PokemonWithSprite } from "@/service/pokemon.service";
 
 export async function data() {
-  const res = await fetch("https://pokeapi.co/api/v2/generation/3");
-  if (!res.ok) throw new Error("Failed to fetch generation data");
-  const gen = await res.json();
-
-  const speciesList: NamedAPIResource[] = gen.pokemon_species;
-
-  const pokemons: PokemonSpeciesDetails[] = await Promise.all(
-    speciesList.map(async (pkmn) => {
-      const r = await fetch(pkmn.url);
-      if (!r.ok) throw new Error(`Failed species: ${pkmn.name}`);
-      return (await r.json()) as PokemonSpeciesDetails;
-    }),
+  const gen = await pokemonService.getGeneration(3);
+  const pokemons = await pokemonService.getPokemonsWithSprites(
+    gen.pokemon_species,
   );
 
   return { pokemons };
