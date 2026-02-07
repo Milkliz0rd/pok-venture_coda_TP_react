@@ -2,6 +2,7 @@ import type { NamedAPIResource, PokemonSpeciesDetails } from "@/type/pokemon";
 
 export type PokemonWithSprite = PokemonSpeciesDetails & {
   sprite: string | null;
+  id: string;
 };
 
 const API_BASE = "https://pokeapi.co/api/v2";
@@ -43,6 +44,7 @@ export const pokemonService = {
         return {
           ...species,
           sprite,
+          id,
         };
       }),
     );

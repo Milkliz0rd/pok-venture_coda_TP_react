@@ -12,6 +12,8 @@ export function PokemonCard(
   const frName =
     pokemon.names.find((n) => n.language.name === "fr")?.name ?? pokemon.name;
 
+  const pokemonId = pokemon.id.toString().padStart(3, "0");
+
   return (
     <article
       {...ariaAttributes}
@@ -20,18 +22,12 @@ export function PokemonCard(
       className={`px-2 flex items-center gap-10 justify-center border-t border-2 ${rest.className ?? ""}`}
     >
       {pokemon.sprite ? (
-        <img
-          src={pokemon.sprite}
-          alt={pokemon.name}
-          width={180}
-          height={180}
-          loading="lazy"
-        />
+        <img src={pokemon.sprite} alt={pokemon.name} loading="lazy" />
       ) : (
         <div style={{ width: 40, height: 40 }} />
       )}
-
-      <h2>{frName}</h2>
+      <h1 className="text-xl font-bold">#{pokemonId}</h1>
+      <h1 className="text-xl font-bold">{frName}</h1>
     </article>
   );
 }
