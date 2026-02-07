@@ -7,33 +7,64 @@ const secret = jose.base64url.decode(
 );
 
 export const authService = {
-  async register(username: string, email: string, password: string) {
-    const prisma = getPrisma();
-    const hashedPassword = await argon2.hash(password);
-    await prisma.user.create({
-      data: { username, email, password: hashedPassword },
-    });
-    prisma.$disconnect();
-  },
-
   async login(email: string, password: string) {
-    const prisma = getPrisma();
-    const user = await prisma.user.findUnique({ where: { email } });
-    if (!user) throw new Error("User not found");
-    const isPasswordValid = await argon2.verify(user.password, password);
-    if (!isPasswordValid) throw new Error("Invalid password");
-    prisma.$disconnect();
-    return this.generateJWT(user.id.toString());
+    const user = await authService.getUserByEmail(email);
+
+    if (!user) {
+      throw new Error("Identifiants invalides");
+    }
+
+    const ok = await authService.verifyPassword(user.password, password);
+    if (!ok) {
+      throw new Error("Identifiants invalides");
+    }
+
+    return await authService.generateJWT(user.id.toString());
   },
 
   async generateJWT(userId: string) {
     return new jose.EncryptJWT({ id: userId })
       .setProtectedHeader({ alg: "dir", enc: "A128CBC-HS256" })
+      .setIssuedAt()
+      .setIssuer("urn:example:issuer")
+      .setAudience("urn:example:audience")
+      .setExpirationTime("2h")
       .encrypt(secret);
   },
 
-  async verifyJWT(token: string) {
-    const { payload } = await jose.jwtVerify(token, secret);
+  async verifyJwt(jwt: string) {
+    const { payload } = await jose.jwtDecrypt(jwt, secret, {
+      issuer: "urn:example:issuer",
+      audience: "urn:example:audience",
+    });
+
     return payload as { id: string };
+  },
+
+  async getUserByEmail(email: string) {
+    const prisma = getPrisma();
+    const user = await prisma.user.findUnique({ where: { email } });
+    prisma.$disconnect();
+    return user;
+  },
+
+  async register(username: string, email: string, password: string) {
+    const prisma = getPrisma();
+
+    const hashedPassword = await argon2.hash(password);
+
+    await prisma.user.create({
+      data: {
+        username,
+        email,
+        password: hashedPassword,
+      },
+    });
+
+    prisma.$disconnect();
+  },
+
+  async verifyPassword(hashedPassword: string, clearPassword: string) {
+    return argon2.verify(hashedPassword, clearPassword);
   },
 };
