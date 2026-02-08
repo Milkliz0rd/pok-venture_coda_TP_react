@@ -15,13 +15,13 @@ export default function Page() {
       <div className="flex gap-8">
         <a
           className="bg-green-300 border-2 border-gray-600 hover:border-orange-500 p-5 rounded-xl"
-          href="/signin"
+          href="/login"
         >
           Se connecter
         </a>
         <a
           className="bg-green-300 border-2 border-gray-600 hover:border-orange-500 p-5 rounded-xl"
-          href="/signup"
+          href="/register"
         >
           S'inscrire
         </a>

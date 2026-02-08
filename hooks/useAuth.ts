@@ -3,9 +3,9 @@ import { navigate, reload } from "vike/client/router";
 import { onLogin, onRegister } from "./useAuth.telefunc";
 
 export function useAuth() {
-  const [email, setEmail] = useState<string>("test@test.fr");
-  const [password, setPassword] = useState<string>("testtesttest");
-  const [username, setUsername] = useState<string>("Jean");
+  const [email, setEmail] = useState<string>("");
+  const [password, setPassword] = useState<string>("");
+  const [username, setUsername] = useState<string>("");
 
   const login = async () => {
     await onLogin(email, password);
