@@ -56,7 +56,7 @@ export async function data(
     .filter((id): id is number => !Number.isNaN(id))
 
   //Pick random Pokémon
-  const selectedIds = pickRandom(pokemonIds, 4)
+  const selectedIds = pickRandom(pokemonIds, 3)
 
   //Fetch Pokémon data in parallel
   const pokemons = await Promise.all(
