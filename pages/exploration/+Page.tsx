@@ -108,10 +108,10 @@ export default function Exploration() {
           alt="Route 101"
           shape="rect"
           coords="110,290,135,270"
-          href="/exploration?id=449"
+          href="/exploration?id=393"
           onClick={(e) => {
             e.preventDefault()
-            goToArea(449)
+            goToArea(393)
           }}
         />
 
@@ -119,10 +119,285 @@ export default function Exploration() {
           alt="Route 102"
           shape="rect"
           coords="65,275,110,240"
-          href="/exploration?id=450"
+          href="/exploration?id=394"
           onClick={(e) => {
             e.preventDefault()
-            goToArea(450)
+            goToArea(394)
+          }}
+        />
+
+        <area
+          alt="Route 103"
+          shape="rect"
+          coords="110,250,200,225"
+          href="/exploration?id=395"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(395)
+          }}
+        />
+
+        <area
+          alt="Route 111"
+          shape="rect"
+          coords="200,45,230,175"
+          href="/exploration?id=403"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(403)
+          }}
+        />
+
+        <area
+          alt="Route 110"
+          shape="rect"
+          coords="200,205,230,270"
+          href="/exploration?id=402"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(402)
+          }}
+        />
+
+        <area
+          alt="Route 109"
+          shape="rect"
+          coords="200,315,230,390"
+          href="/exploration?id=401"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(401)
+          }}
+        />
+
+        <area
+          alt="Route 108"
+          shape="rect"
+          coords="155,355,200,390"
+          href="/exploration?id=400"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(400)
+          }}
+        />
+
+        <area
+          alt="Route 107"
+          shape="rect"
+          coords="90,355,155,390"
+          href="/exploration?id=399"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(399)
+          }}
+        />
+
+        <area
+          alt="Route 106"
+          shape="rect"
+          coords="20,335,90,360"
+          href="/exploration?id=398"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(398)
+          }}
+        />
+
+        <area
+          alt="Route 105"
+          shape="rect"
+          coords="20,250,45,335"
+          href="/exploration?id=397"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(397)
+          }}
+        />
+
+        <area
+          alt="Route 104"
+          shape="rect"
+          coords="20,200,45,250"
+          href="/exploration?id=396"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(396)
+          }}
+        />
+
+        <area
+          alt="Route 115"
+          shape="rect"
+          coords="20,90,45,160"
+          href="/exploration?id=407"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(407)
+          }}
+        />
+
+        <area
+          alt="Route 114"
+          shape="rect"
+          coords="45,45,70,110"
+          href="/exploration?id=406"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(406)
+          }}
+        />
+
+        <area
+          alt="Route 114"
+          shape="rect"
+          coords="70,45,90,70"
+          href="/exploration?id=406"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(406)
+          }}
+        />
+
+        <area
+          alt="Route 113"
+          shape="rect"
+          coords="110,45,200,70"
+          href="/exploration?id=405"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(405)
+          }}
+        />
+
+        <area
+          alt="Route 112"
+          shape="rect"
+          coords="155,110,200,135"
+          href="/exploration?id=404"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(404)
+          }}
+        />
+
+        <area
+          alt="Route 116"
+          shape="rect"
+          coords="45,155,135,180"
+          href="/exploration?id=408"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(408)
+          }}
+        />
+
+        <area
+          alt="Route 117"
+          shape="rect"
+          coords="130,175,200,205"
+          href="/exploration?id=409"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(409)
+          }}
+        />
+
+        <area
+          alt="Route 118"
+          shape="rect"
+          coords="290,165,245,210"
+          href="/exploration?id=410"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(410)
+          }}
+        />
+
+        <area
+          alt="Route 123"
+          shape="rect"
+          coords="290,165,405,210"
+          href="/exploration?id=415"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(415)
+          }}
+        />
+
+        <area
+          alt="Route 119"
+          shape="rect"
+          coords="265,40,290,164"
+          href="/exploration?id=411"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(411)
+          }}
+        />
+
+        <area
+          alt="Route 120"
+          shape="rect"
+          coords="313,40,335,135"
+          href="/exploration?id=412"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(412)
+          }}
+        />
+
+        <area
+          alt="Route 121"
+          shape="rect"
+          coords="335,135,425,100"
+          href="/exploration?id=413"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(413)
+          }}
+        />
+
+        <area
+          alt="Route 125"
+          shape="rect"
+          coords="555,105,605,156"
+          href="/exploration?id=418"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(418)
+          }}
+        />
+
+        <area
+          alt="Route 126"
+          shape="rect"
+          coords="469,180,555,248"
+          href="/exploration?id=419"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(419)
+          }}
+        />
+
+        <area
+          alt="Route 127"
+          shape="rect"
+          coords="605,180,555,248"
+          href="/exploration?id=421"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(421)
+          }}
+        />
+
+        <area
+          alt="Route 128"
+          shape="rect"
+          coords="530,248,605,272"
+          href="/exploration?id=422"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(422)
           }}
         />
 
@@ -130,14 +405,89 @@ export default function Exploration() {
           alt="Victory Road"
           shape="rect"
           coords="605,248,625,272"
-          href="/exploration?id=444"
+          href="/exploration?id=383"
           onClick={(e) => {
             e.preventDefault()
-            goToArea(444)
+            goToArea(383)
           }}
         />
-        {/* this is a chunk for test*/}
-        {/* there is too many areas >:(*/}
+
+        <area
+          alt="Route 129"
+          shape="rect"
+          coords="605,295,530,270"
+          href="/exploration?id=423"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(423)
+          }}
+        />
+
+        <area
+          alt="Route 130"
+          shape="rect"
+          coords="469,295,530,270"
+          href="/exploration?id=424"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(424)
+          }}
+        />
+
+        <area
+          alt="Route 131"
+          shape="rect"
+          coords="430,295,469,270"
+          href="/exploration?id=425"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(425)
+          }}
+        />
+
+        <area
+          alt="Route 132"
+          shape="rect"
+          coords="360,295,400,270"
+          href="/exploration?id=426"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(426)
+          }}
+        />
+
+        <area
+          alt="Route 133"
+          shape="rect"
+          coords="290,295,360,270"
+          href="/exploration?id=427"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(427)
+          }}
+        />
+
+        <area
+          alt="Route 134"
+          shape="rect"
+          coords="225,295,290,270"
+          href="/exploration?id=428"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(428)
+          }}
+        />
+
+        <area
+          alt="Route 124"
+          shape="rect"
+          coords="469,105,555,180"
+          href="/exploration?id=416"
+          onClick={(e) => {
+            e.preventDefault()
+            goToArea(416)
+          }}
+        />
       </map>
 
       {/* Pokémon results */}
