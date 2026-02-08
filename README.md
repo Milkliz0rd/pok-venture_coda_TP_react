@@ -1,53 +1,45 @@
-Generated with [vike.dev/new](https://vike.dev/new) ([version 572](https://www.npmjs.com/package/create-vike/v/0.0.572)) using this command:
+# PokéVenture
 
-```sh
-npm create vike@latest --- --react --tailwindcss --telefunc --express --sqlite --biome
+Application React SSR (Vike) avec Pokédex interactif et système d'authentification.
+
+## Installation
+
+```bash
+npm install
+npx prisma migrate dev
+npm run dev
 ```
 
-## Contents
+## Variables d'environnement
 
-- [Vike](#vike)
-  - [Plus files](#plus-files)
-  - [Routing](#routing)
-  - [SSR](#ssr)
-  - [HTML Streaming](#html-streaming)
-- [Photon](#photon)
+Créer `.env` :
 
-## Vike
+```
+DATABASE_URL="file:./prisma/dev.db"
+```
 
-This app is ready to start. It's powered by [Vike](https://vike.dev) and [React](https://react.dev/learn).
+## Stack
 
-### Plus files
+- Vike (SSR) + React + TypeScript
+- Prisma 7 + SQLite
+- PokéAPI + react-window
 
-[The + files are the interface](https://vike.dev/config) between Vike and your code.
+## Modèles de données
 
-- [`+config.ts`](https://vike.dev/settings) — Settings (e.g. `<title>`)
-- [`+Page.tsx`](https://vike.dev/Page) — The `<Page>` component
-- [`+data.ts`](https://vike.dev/data) — Fetching data (for your `<Page>` component)
-- [`+Layout.tsx`](https://vike.dev/Layout) — The `<Layout>` component (wraps your `<Page>` components)
-- [`+Head.tsx`](https://vike.dev/Head) - Sets `<head>` tags
-- [`/pages/_error/+Page.tsx`](https://vike.dev/error-page) — The error page (rendered when an error occurs)
-- [`+onPageTransitionStart.ts`](https://vike.dev/onPageTransitionStart) and `+onPageTransitionEnd.ts` — For page transition animations
+- **User** : email, username, password (hashé)
+- **Character** : name, userId
+- **Pokedex** : pokemonId, characterId, caughtAt
 
-### Routing
+## Commandes utiles
 
-[Vike's built-in router](https://vike.dev/routing) lets you choose between:
+```bash
+npx prisma generate
+npx prisma studio
+```
 
-- [Filesystem Routing](https://vike.dev/filesystem-routing) (the URL of a page is determined based on where its `+Page.jsx` file is located on the filesystem)
-- [Route Strings](https://vike.dev/route-string)
-- [Route Functions](https://vike.dev/route-function)
+## À faire
 
-### SSR
-
-SSR is enabled by default. You can [disable it](https://vike.dev/ssr) for all or specific pages.
-
-### HTML Streaming
-
-You can [enable/disable HTML streaming](https://vike.dev/stream) for all or specific pages.
-
-## Photon
-
-[Photon](https://photonjs.dev) is a next-generation infrastructure for deploying JavaScript servers.
-
-See [Introducing Photon](https://vike.dev/blog/photon) and [Why Photon](https://photonjs.dev/why) to learn more.
-
+- [ ] Auth (Argon2 + JWT + cookies)
+- [ ] Telefunc + PageContext
+- [ ] Système de personnages
+- [ ] Tracking des captures

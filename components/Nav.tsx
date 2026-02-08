@@ -1,6 +1,6 @@
 export function Nav() {
   return (
-    <nav className="flex justify-between p-5 bg-amber-100 max-w-screen">
+    <nav className="flex justify-between p-5 bg-amber-100 w-full">
       <div className="flex gap-5">
         <a href="/">Accueil</a>
         <a href="/exploration">Exploration</a>
@@ -10,8 +10,8 @@ export function Nav() {
         <a href="/leaderboard">Classement</a>
       </div>
       <div className="flex gap-5">
-        <a href="/signup">Inscription</a>
-        <a href="/signin">Connexion</a>
+        <a href="/register">Inscription</a>
+        <a href="/login">Connexion</a>
       </div>
     </nav>
   );

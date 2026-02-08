@@ -1,7 +1,8 @@
-import { List } from "react-window";
 import { useData } from "vike-react/useData";
+import { List } from "react-window";
 import type { Data } from "./+data";
 import { usePokemonList } from "@/hooks/usePokemonList";
+import bgPokedex from "@/assets/pokedexMini.webp";
 import { VirtualizedPokemonCard } from "@/components/PokemonVirtualList";
 
 export default function Pokedex() {
@@ -9,7 +10,13 @@ export default function Pokedex() {
   const { filteredList, search, setSearch } = usePokemonList(pokemons);
 
   return (
-    <main className="flex flex-col w-screen h-screen items-center justify-center bg-[url(@/assets/pokedexMini.webp)]">
+    <main
+      className="
+    flex flex-col 
+    items-center justify-center
+    w-full min-h-full "
+      style={{ backgroundImage: `url(${bgPokedex})` }}
+    >
       <div>
         <img
           className="w-90 h-30 m-5"
@@ -24,8 +31,7 @@ export default function Pokedex() {
         onChange={(e) => setSearch(e.target.value)}
       />
 
-      {/* IMPORTANT : hauteur sur le parent */}
-      <div className="relative h-[400px] w-3xl border-3 bg-blue-100 rounded-2xl">
+      <div className="relative h-100 w-3xl border-3 bg-blue-100 rounded-2xl">
         <List
           rowComponent={VirtualizedPokemonCard}
           rowCount={filteredList.length}

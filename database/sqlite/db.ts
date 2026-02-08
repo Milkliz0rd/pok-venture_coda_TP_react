@@ -1,4 +1,5 @@
 import sqlite, { type Database } from "better-sqlite3";
+import path from "node:path";
 
 let singleton: Database | undefined;
 
@@ -8,7 +9,12 @@ export function db(): Database {
       throw new Error("Missing DATABASE_URL in .env file");
     }
 
-    singleton = sqlite(process.env.DATABASE_URL);
+    const cleanPath = process.env.DATABASE_URL.replace("file:", "");
+
+    const dbPath = path.join(process.cwd(), cleanPath);
+
+    singleton = sqlite(dbPath);
   }
+
   return singleton;
 }
